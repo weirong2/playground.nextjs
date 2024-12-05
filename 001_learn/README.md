@@ -34,3 +34,13 @@ npm error A complete log of this run can be found in: /Users/weirong/.npm/_logs/
 sudo npm install -g pnpm
 ```
 or [How do I fix the npm error EACCES: permission denied?](https://stackoverflow.com/questions/69421649/how-do-i-fix-the-npm-error-eacces-permission-denied)
+
+#### set application port (default is 3000) to a different number
+change package.json from
+```
+    "dev": "next dev --turbo",
+```
+to
+```
+    "dev": "next dev --turbo -p 4000",
+```
