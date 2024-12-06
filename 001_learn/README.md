@@ -1,3 +1,9 @@
+## Dev
+#### Launch
+```
+pnpm dev
+```
+
 ## Issues
 
 #### install pnpm permission denied
