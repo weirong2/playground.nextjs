@@ -43,3 +43,7 @@ install_local/content/logs/
 install_local/content/themes/
 install_local/current
 install_local/versions/
+
+# ghost_install_local
+install_local/
+assets/
