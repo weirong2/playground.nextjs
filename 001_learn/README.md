@@ -3,6 +3,11 @@
 ```
 pnpm dev
 ```
+or
+```
+cd nextjs-dashboard
+pnpm run dev
+```
 
 ## Issues
 
