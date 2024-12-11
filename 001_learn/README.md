@@ -3,6 +3,10 @@
 ```
 pnpm dev
 ```
+or
+```
+pnpm run dev
+```
 
 ## Issues
 
