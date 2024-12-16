@@ -1,5 +1,5 @@
 ## Dev
-#### Launch
+### Launch
 ```
 pnpm dev
 ```
@@ -10,8 +10,7 @@ pnpm run dev
 ```
 
 ## Issues
-
-#### install pnpm permission denied
+### install pnpm permission denied
 ```
 » npm install -g pnpm
 npm error code EACCES
@@ -46,7 +45,7 @@ sudo npm install -g pnpm
 ```
 or [How do I fix the npm error EACCES: permission denied?](https://stackoverflow.com/questions/69421649/how-do-i-fix-the-npm-error-eacces-permission-denied)
 
-#### set application port (default is 3000) to a different number
+### set application port (default is 3000) to a different number
 change package.json from
 ```
     "dev": "next dev --turbo",
@@ -54,4 +53,49 @@ change package.json from
 to
 ```
     "dev": "next dev --turbo -p 4000",
+```
+
+### CanaryOnlyError: The experimental feature "experimental.ppr" can only be enabled when using the latest canary version of Next.js.
+```
+» pnpm run dev
+
+> @ dev /Users/weirong/Documents/repos/gl/pub/playground.nextjs/001_learn/nextjs-dashboard
+> next dev --turbo -p 4000
+
+/Users/weirong/Documents/repos/gl/pub/playground.nextjs/001_learn/nextjs-dashboard/node_modules/.pnpm/next@15.0.3_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013__react@19.0.0-rc-cd22717c-20241013/node_modules/next/dist/server/config.js:241
+            throw new CanaryOnlyError('experimental.ppr');
+                  ^
+
+CanaryOnlyError: The experimental feature "experimental.ppr" can only be enabled when using the latest canary version of Next.js.
+    at assignDefaults (/Users/weirong/Documents/repos/gl/pub/playground.nextjs/001_learn/nextjs-dashboard/node_modules/.pnpm/next@15.0.3_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013__react@19.0.0-rc-cd22717c-20241013/node_modules/next/dist/server/config.js:241:19)
+    at loadConfig (/Users/weirong/Documents/repos/gl/pub/playground.nextjs/001_learn/nextjs-dashboard/node_modules/.pnpm/next@15.0.3_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013__react@19.0.0-rc-cd22717c-20241013/node_modules/next/dist/server/config.js:843:32)
+    at async Module.nextDev (/Users/weirong/Documents/repos/gl/pub/playground.nextjs/001_learn/nextjs-dashboard/node_modules/.pnpm/next@15.0.3_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013__react@19.0.0-rc-cd22717c-20241013/node_modules/next/dist/cli/next-dev.js:190:14)
+
+Node.js v20.11.1
+ ELIFECYCLE  Command failed with exit code 1.
+```
+- [stackoverflow](https://stackoverflow.com/questions/79222268/canaryonlyerror-the-experimental-feature-experimental-ppr-can-only-be-enabled)
+```
+» pnpm i next@canary
+
+   ╭──────────────────────────────────────────────────────────────────╮
+   │                                                                  │
+   │                Update available! 9.14.4 → 9.15.0.                │
+   │   Changelog: https://github.com/pnpm/pnpm/releases/tag/v9.15.0   │
+   │                Run "pnpm add -g pnpm" to update.                 │
+   │                                                                  │
+   ╰──────────────────────────────────────────────────────────────────╯
+
+Downloading next@15.1.1-canary.6: 25.37 MB/25.37 MB, done
+ WARN  6 deprecated subdependencies found: are-we-there-yet@2.0.0, gauge@3.0.2, glob@7.2.3, inflight@1.0.6, npmlog@5.0.1, rimraf@3.0.2
+Packages: +5
++++++
+Progress: resolved 252, reused 224, downloaded 4, added 5, done
+Downloading @next/swc-darwin-arm64@15.1.1-canary.6: 41.66 MB/41.66 MB, done
+
+dependencies:
+- next 15.0.3
++ next 15.1.1-canary.6
+
+Done in 22.9s
 ```
