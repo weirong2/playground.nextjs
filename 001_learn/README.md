@@ -1,16 +1,18 @@
-## Dev
-### Launch
+# Dev
+```
+cd nextjs-dashboard
+```
+## Launch
 ```
 pnpm dev
 ```
 or
 ```
-cd nextjs-dashboard
 pnpm run dev
 ```
 
-## Issues
-### install pnpm permission denied
+# Issues
+## install pnpm permission denied
 ```
 » npm install -g pnpm
 npm error code EACCES
@@ -45,7 +47,7 @@ sudo npm install -g pnpm
 ```
 or [How do I fix the npm error EACCES: permission denied?](https://stackoverflow.com/questions/69421649/how-do-i-fix-the-npm-error-eacces-permission-denied)
 
-### set application port (default is 3000) to a different number
+## set application port (default is 3000) to a different number
 change package.json from
 ```
     "dev": "next dev --turbo",
@@ -55,7 +57,7 @@ to
     "dev": "next dev --turbo -p 4000",
 ```
 
-### CanaryOnlyError: The experimental feature "experimental.ppr" can only be enabled when using the latest canary version of Next.js.
+## CanaryOnlyError: The experimental feature "experimental.ppr" can only be enabled when using the latest canary version of Next.js.
 ```
 » pnpm run dev
 
